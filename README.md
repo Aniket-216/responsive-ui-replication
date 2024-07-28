@@ -92,5 +92,4 @@ pnpm list <module_name>
 
 ## Deployment
 
-[text](https://responsive-ui-replication.vercel.app/)
-The project is deployed on Vercel. You can visit the live version here.
+The project is deployed on Vercel. You can visit the live version [here](https://responsive-ui-replication.vercel.app/).
