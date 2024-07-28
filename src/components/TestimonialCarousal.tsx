@@ -23,7 +23,7 @@ const TestimonialContainer = styled(Box)(() => ({
 }));
 
 const TestimonialTitleBox = styled(Stack)(({ theme }) => ({
-   width: "48%",
+   width: "47%",
    [theme.breakpoints.down("md")]: {
       width: "90%",
    },

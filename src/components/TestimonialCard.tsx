@@ -3,27 +3,37 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import styled from "@mui/material/styles/styled";
+import { keyframes } from "@mui/material/styles";
 
-const ContainerCard = styled(Stack)(({ theme }) => ({
-   width: "100%",
-   maxWidth: "460px",
-   height: "auto",
-   minHeight: "365px",
-   backgroundColor: "#FFFFFF1A",
-   borderRadius: 20,
-   padding:
-      theme.spacing(5) +
-      " " +
-      theme.spacing(3.75) +
-      " " +
-      theme.spacing(6.25) +
-      " " +
-      theme.spacing(3.75),
-   color: theme.palette.common.white,
-   "&:hover": {
-      border: `1px solid ${theme.palette.primary.main}`,
-   },
-}));
+const ContainerCard = styled(Stack)(({ theme }) => {
+   const borderColorAnimation = keyframes`
+     0% {
+       border-color: #FFFFFF26;
+     }
+     100% {
+       border-color: ${theme.palette.primary.dark};
+     }
+   `;
+
+   return {
+      width: "100%",
+      maxWidth: "460px",
+      height: "auto",
+      minHeight: "365px",
+      backgroundColor: "#FFFFFF1A",
+      borderRadius: 20,
+      padding: `${theme.spacing(5)} ${theme.spacing(3.75)} ${theme.spacing(
+         6.25
+      )} ${theme.spacing(3.75)}`,
+      border: `1px solid #FFFFFF26`,
+      color: theme.palette.common.white,
+      transition: "border-color 0.5s ease-in-out",
+      "&:hover": {
+         border: `1px solid ${theme.palette.primary.dark}`,
+         animation: `${borderColorAnimation} 0.5s forwards`,
+      },
+   };
+});
 
 const UserInfoBox = styled(Box)(() => ({
    height: "95px",
